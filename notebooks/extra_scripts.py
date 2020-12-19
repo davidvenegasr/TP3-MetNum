@@ -59,11 +59,11 @@ def cross_validate(K, X, Y, visualize = False, R2 = False):
         # Se calcula la prediccion
         regression = LinearRegression()
         
-        # regression.fit(X_train, Y_train)
-        # y_pred = regression.predict(X_test)
-        regression.fit(X_train.reshape(-1, 1), Y_train)
-        y_pred = regression.predict(X_test.reshape(-1, 1))
-        y_pred = y_pred.reshape(y_pred.shape[0])           
+        regression.fit(X_train, Y_train)
+        y_pred = regression.predict(X_test)
+        # regression.fit(X_train.reshape(-1, 1), Y_train)
+        # y_pred = regression.predict(X_test.reshape(-1, 1))
+        # y_pred = y_pred.reshape(y_pred.shape[0])           
         
         # Se evaluan las metricas
         R2_values.append(r2_score(Y_test, y_pred))
