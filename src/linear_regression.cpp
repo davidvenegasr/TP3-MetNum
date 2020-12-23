@@ -18,7 +18,6 @@ void LinearRegression::fit(Matrix X, Matrix y) {
 
 Matrix LinearRegression::predict(Matrix X)
 {
-    //auto ret = MatrixXd::Zero(X.rows(), 1);
 
 	return (X * W);
 }
