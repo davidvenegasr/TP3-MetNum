@@ -17,7 +17,7 @@
 from sklearn.model_selection import KFold
 from sklearn.metrics import mean_squared_error, mean_squared_log_error, r2_score
 
-from sklearn.linear_model import LinearRegression #TODO: delete
+import metnum
 import numpy as np
 
 def rmse(A,B):
@@ -57,7 +57,7 @@ def cross_validate(K, X, Y, visualize = False, R2 = False):
         Y_train, Y_test = Y[index_train], Y[index_test]
 
         # Se calcula la prediccion
-        regression = LinearRegression()
+        regression = metnum.LinearRegression()
         
         regression.fit(X_train, Y_train)
         y_pred = regression.predict(X_test)
