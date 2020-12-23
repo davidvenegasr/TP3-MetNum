@@ -1,5 +1,4 @@
 #include <algorithm>
-//#include <chrono>
 #include <pybind11/pybind11.h>
 #include <iostream>
 #include <exception>
@@ -8,27 +7,25 @@
 using namespace std;
 namespace py=pybind11;
 
-LinearRegression::LinearRegression()
-{
-    // Inicializamos la estructura de regresor lineal para los coeficientes en el vector W
-    Matrix m;
-    this-> W = m;
+LinearRegression::LinearRegression() {
 }
 
-void LinearRegression::fit(Matrix X, Matrix y)
-{
+void LinearRegression::fit(Matrix X, Matrix y) {
 
-    Matrix XT = X.transpose();
-    
-    //W^ =(XTX)^−1 XTy
-    W = (XT*X).inverse()* XT*y;
-
+	
+	Matrix Xt = X.transpose();
+	W = (Xt * X).ldlt().solve(Xt * y);
+	
 }
-
 
 Matrix LinearRegression::predict(Matrix X)
 {
-    auto ret = MatrixXd::Zero(X.rows(), 1);
-    Matrix y = X*W;
-    return ret;
+    //auto ret = MatrixXd::Zero(X.rows(), 1);
+
+	return (X * W);
+}
+
+Matrix LinearRegression::coef()
+{
+	return W;
 }

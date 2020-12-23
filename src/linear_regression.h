@@ -9,6 +9,8 @@ public:
     void fit(Matrix X, Matrix y);
 
     Matrix predict(Matrix X);
+
+    Matrix coef();
 private:
     Matrix W;
 };
