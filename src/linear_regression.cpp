@@ -12,9 +12,7 @@ LinearRegression::LinearRegression() {
 
 void LinearRegression::fit(Matrix X, Matrix y) {
 
-	
-	Matrix Xt = X.transpose();
-	W = (Xt * X).ldlt().solve(Xt * y);
+	W = (X.transpose() * X).ldlt().solve(X.transpose() * y);
 	
 }
 
