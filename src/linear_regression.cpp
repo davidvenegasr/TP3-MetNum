@@ -25,7 +25,4 @@ Matrix LinearRegression::predict(Matrix X)
 	return (X * W);
 }
 
-Matrix LinearRegression::coef()
-{
-	return W;
-}
+

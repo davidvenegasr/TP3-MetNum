@@ -10,7 +10,6 @@ public:
 
     Matrix predict(Matrix X);
 
-    Matrix coef();
 private:
     Matrix W;
 };
