@@ -12,7 +12,6 @@ vigilancia
 family
 escuela
 child
-son
 daughter
 babys
 school
