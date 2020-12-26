@@ -68,7 +68,6 @@ def cross_validate(K, X, Y, visualize = False, R2 = False):
         # Se evaluan las metricas
         R2_values.append(r2_score(Y_test, y_pred))
         if np.any(y_pred < 0):
-            print("Error! Se obtuvo un negativo, se procede a tomar el valor absoluto")
             y_pred = np.abs(y_pred)
         rmse_values.append(rmse(Y_test, y_pred))
         rmsle_values.append(rmsle(Y_test, y_pred))
