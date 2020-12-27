@@ -1,6 +1,14 @@
 # Metros Cuadrados Mínimos Lineales: TP3 de Métodos Numéricos
 ## 2020, 2do cuatrimestre
 
+Es recomendable la lectura de los notebooks en el orden:
+
+- Análisis Preliminar 
+- Exp1
+- Exp2
+- Exp3
+- Exp4
+
 ## Instrucciones
 
 
