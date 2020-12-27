@@ -1,5 +1,25 @@
 #!/usr/bin/python3
 
+""" 
+--------------------------------------------------------------------------------------
+-----------------------------------| FORMA DE USO |-----------------------------------
+--------------------------------------------------------------------------------------
+Las instrucciones de uso son mostradas al ejecutar el siguiente comando:
+   python3 tp3.py --help
+
+Ejemplo de uso: 
+   python tp3.py -t data/train.csv -o output.csv -f precio -c 2 metroscubiertos banos
+   El comando de ejemplo tiene las siguientes caracteristicas:
+       - Lee el dataset:                                   data/train.csv
+       - Guarda el resultado en el archivo:                output.csv
+       - Se estima del dataset la variable:                "precio"
+       - La cant de variables que estiman son:             2
+       - La estimación se hace en base a las variables:    "metroscubiertos" y "banos"
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+"""
+
 import sys
 sys.path.append('notebooks')
 
@@ -17,7 +37,6 @@ if (argc <= 8) & (argc != 2) & (argc != 1):
     print("Parametros Invalidos\n")
     sys.exit()
 elif (argc == 2) & (sys.argv[1] == "--help"):
-    #python tp3.py -t data/train.csv -o output.csv -f precio -c 2 metroscubiertos banos
     print("Uso: tp3 -t <train> -o <output> -f <predict> -c <cant_features> [feature1 feature2 ...]" )
     print("     <train>: Direccion para el archivo CSV de train")
     print("     <output>: Direccion para el archivo CSV donde guardar el resultado")
